@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import average_precision_score, roc_auc_score
 import pandas as pd
 
-def eval_classification(model, train_data, train_labels, test_data, test_labels, includePreops, outcome, eval_protocol='xgbt'):
+def eval_classification(model, train_data, train_labels, test_data, test_labels, eval_protocol='xgbt'):
     assert train_labels.ndim == 1 or train_labels.ndim == 2
     train_repr = model.encode(train_data, encoding_window='full_series' if train_labels.ndim == 1 else None)
     test_repr = model.encode(test_data, encoding_window='full_series' if train_labels.ndim == 1 else None)
@@ -31,59 +31,6 @@ def eval_classification(model, train_data, train_labels, test_data, test_labels,
         train_labels = merge_dim01(train_labels)
         test_repr = merge_dim01(test_repr)
         test_labels = merge_dim01(test_labels)
-
-    breakpoint()
-
-    # data_dir = '/input/'
-    data_dir = 'datasets/Epic/'
-
-    if includePreops:
-        preops_train = np.load(data_dir + "preops_proc_train.npy")
-        preops_test = np.load(data_dir + "preops_proc_test.npy")
-        preops_valid = np.load(data_dir + "preops_proc_test.npy")
-        #
-        # train_X = np.load(data_dir + "preops_proc_train.npy")
-        # test_X = np.load(data_dir + "preops_proc_test.npy")
-        # preops_valid = np.load(data_dir + "preops_proc_test.npy")
-
-        cbow_train = np.load(data_dir + "cbow_proc_train.npy")
-        cbow_test = np.load(data_dir + "cbow_proc_test.npy")
-
-        # train_X_cbow = np.load(data_dir + "cbow_proc_train.npy")
-        # test_X_cbow = np.load(data_dir + "cbow_proc_test.npy")
-
-        if outcome=='icu': # evaluation only on the non preplanned ICU cases
-            preops_raw = pd.read_csv(data_dir + "Raw_preops_used_in_ICU.csv")
-            train_idx = pd.read_csv(data_dir + "train_test_id_orlogid_map.csv")
-            test_index_orig = train_idx[train_idx['train_id_or_not'] == 0]['new_person'].values
-            test_index = preops_raw.iloc[test_index_orig][preops_raw.iloc[test_index_orig]['plannedDispo'] != 3][
-                'plannedDispo'].index
-
-            # breakpoint()
-
-            preops_test = preops_test[test_index]
-            cbow_test = cbow_test[test_index]
-
-            # test_X = test_X[test_index]
-            # test_X_cbow = test_X_cbow[test_index]
-
-            del preops_raw, test_index, train_idx
-
-
-        # is the scaling needed again as the preops have been processes already?
-        scaler = StandardScaler()
-        scaler.fit(preops_train)
-        train_X = scaler.transform(preops_train)
-        test_X = scaler.transform(preops_test)
-
-        scaler_cbow = StandardScaler()
-        scaler_cbow.fit(cbow_train)
-        train_X_cbow = scaler_cbow.transform(cbow_train)
-        test_X_cbow = scaler_cbow.transform(cbow_test)
-
-        train_repr = np.concatenate((train_repr, train_X, train_X_cbow), axis=1)
-        test_repr = np.concatenate((test_repr, test_X, test_X_cbow), axis=1)
-
 
 
     clf = fit_clf(train_repr, train_labels)
