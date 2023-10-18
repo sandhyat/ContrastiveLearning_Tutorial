@@ -38,14 +38,13 @@ def eval_classification(model, train_data, train_labels, test_data, test_labels,
     acc = clf.score(test_repr, test_labels)
 
 
-    if (eval_protocol == 'linear') or (eval_protocol == 'xgbt'):
-        y_score = clf.predict_proba(test_repr)
-        auprc = average_precision_score(test_labels, y_score[:,1])
-        auroc = roc_auc_score(test_labels, y_score[:,1])
-    else:
+    if (eval_protocol == 'svm'):
         y_score = clf.decision_function(test_repr)
-        test_labels_onehot = label_binarize(test_labels, classes=np.arange(train_labels.max()+1))
-        auprc = average_precision_score(test_labels_onehot, y_score)
-        auroc = roc_auc_score(test_labels_onehot, y_score)
+    else:
+        y_score = clf.predict_proba(test_repr)
+
+    test_labels_onehot = label_binarize(test_labels, classes=np.arange(train_labels.max()+1))
+    auprc = average_precision_score(test_labels_onehot, y_score)
+    auroc = roc_auc_score(test_labels_onehot, y_score)
     
     return y_score, { 'acc': acc, 'auprc': auprc, 'auroc': auroc }
