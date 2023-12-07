@@ -22,3 +22,76 @@ In addition to providing implementation of CL models, we also demonstrate:
 
 ## Datasets
 The datasets in the folder Small_datasets are open source. One of them is a synthetic dataset drawn from 20-D multivariate Gaussian distribution.
+
+## References
+
+**Loss functions**
+
+1) [NCE 2010](http://proceedings.mlr.press/v9/gutmann10a.html)
+
+2) [Triplet Loss](https://arxiv.org/pdf/1503.03832.pdf) 
+
+3) [N-pair](https://papers.nips.cc/paper/2016/file/6b180037abbebea991d8b1232f8a8ca9-Paper.pdf) 
+
+4) [Lifted Structured Loss](https://arxiv.org/pdf/1511.06452.pdf) 
+
+5) [Soft NN Loss](http://proceedings.mlr.press/v97/frosst19a/frosst19a.pdf) 
+
+6) [InfoNCE](https://arxiv.org/pdf/1807.03748v2.pdf) 
+
+7) [NTXent](https://arxiv.org/abs/2002.05709)
+
+**Theory**
+
+1) [InfoMIN: label preserving](https://proceedings.neurips.cc/paper/2020/file/4c2e5eaae9152079b9e95845750bb9ab-Paper.pdf) 
+
+2) [Understanding CL via Alignment and Uniformity](https://arxiv.org/pdf/2005.10242.pdf) 
+
+3) [Entropy and Reconstruction for lower bounding MI between learnt Representation](https://arxiv.org/pdf/2307.10907.pdf) 
+
+4) [Feature dropout: label destroying](https://arxiv.org/pdf/2212.08378.pdf) 
+
+5) [CL and inductive biases](https://arxiv.org/abs/2202.14037)
+
+**Batch construction strategies**
+
+1) [CL as instance discrimination: Memory bank](https://arxiv.org/pdf/1805.01978.pdf) 
+
+2) [Momentum Contrast MoCo: Queue ](https://arxiv.org/pdf/1911.05722.pdf) 
+
+3) [NNCLR: Nearest Neighbour support set](https://arxiv.org/pdf/2104.14548.pdf) 
+
+4) [CL with hard negative samples](https://openreview.net/pdf?id=CR1XOQ0UTh-)
+
+**Augmentation**
+
+1) [Text augmentations CERT ](https://arxiv.org/pdf/2005.12766.pdf) 
+
+2) [TSTCC- Time series augmentation](https://arxiv.org/pdf/2208.06616.pdf) 
+
+3) [CLOCS- Times series augmentation](https://arxiv.org/pdf/2005.13249.pdf) 
+
+4) [TFC- Time series augmentation](https://arxiv.org/abs/2206.08496)
+
+5) [TS2VEC- Time series augmentation](https://arxiv.org/pdf/2106.10466.pdf) 
+
+6) [Finding order in Chaos- Time series augmentation](https://siplab.org/papers/neurips2023-chaos.pdf) 
+
+7) [SubTab- Tabular augmentation](https://browse.arxiv.org/pdf/2110.04361.pdf) 
+
+8) [GraphCL- Graph augmentation](https://proceedings.nips.cc/paper/2020/file/3fe230348e9a12c13120749e3f9fa4cd-Paper.pdf) 
+
+9) [Text augmentation in embedded space](https://arxiv.org/pdf/2012.07280.pdf) 
+
+10) [Graph augmentation in embedded space](https://arxiv.org/pdf/2112.08679.pdf) 
+
+
+**Multimodal Contrastive learning** 
+
+1) [ConVIRT](https://arxiv.org/pdf/2010.00747.pdf) 
+
+2) [CLIP](https://arxiv.org/pdf/2103.00020.pdf) 
+
+3) [UnCLIP](https://cdn.openai.com/papers/dall-e-2.pdf) 
+
+4) [CMCR](https://arxiv.org/pdf/2305.14381.pdf) 
