@@ -4,6 +4,8 @@ The motivation of this tutorial is to extend CL's focus towards other modalitite
 This repository contains example jupyter notebooks where the reader can implement contrastively trained models for time series and tabular data. 
 The datasets are also included in the repository in 'Small_datasets' directory.
 
+The slides for CODS-COMAD tutorial are [here](https://github.com/sandhyat/ContrastiveLearning_Tutorial/blob/main/CODS-COMAD2024_CL_tutorial.pdf.)
+
 ts2vec folder is attributed to the authors of [TS2VEC paper](https://github.com/yuezhihan/ts2vec).
 scarf folder is adapted from the pytorch implementation of [SCARF](https://github.com/clabrugere/pytorch-scarf/tree/master).
 Database_matching folder is adapted from an application of CL to [integrate EHR datasets](https://github.com/sandhyat/KMFChimericE_SchMatch).
