@@ -44,6 +44,7 @@ The datasets in the folder Small_datasets are open source. One of them is a synt
 3) [Entropy and Reconstruction for lower bounding MI between learnt Representation](https://arxiv.org/pdf/2307.10907.pdf) 
 4) [Feature dropout: label destroying](https://arxiv.org/pdf/2212.08378.pdf) 
 5) [CL and inductive biases](https://arxiv.org/abs/2202.14037)
+6) [CL explained via distributionally robust optimization over negative sampling distribution](https://proceedings.neurips.cc/paper_files/paper/2023/file/48aaa5ea741ae8430bd58e25917d267d-Paper-Conference.pdf)
 
 **Batch construction strategies**
 
@@ -75,6 +76,8 @@ The datasets in the folder Small_datasets are open source. One of them is a synt
 6) [SCARF for tabular data](https://browse.arxiv.org/pdf/2106.15147.pdf)
 7) [SAINT: dual attention based for tabular data](https://browse.arxiv.org/pdf/2106.01342.pdf)
 8) [TransTab for multiple sets of tabular data](https://browse.arxiv.org/pdf/2205.09328.pdf)
+9) [Learning unsupervised representation for icu timeseries](https://proceedings.mlr.press/v174/weatherhead22a/weatherhead22a.pdf)
+10) [Time series specific augmentations, hard negative mining and optimization](https://ojs.aaai.org/index.php/AAAI/article/view/29299)
 
 **Multimodal Contrastive learning** 
 
@@ -88,12 +91,15 @@ The datasets in the folder Small_datasets are open source. One of them is a synt
 8) [3Towers: role of pretrained model with 3 encoders](https://arxiv.org/pdf/2305.16999.pdf)
 9) [Mind the Gap: understanding the embedding gap and its role in CL](https://arxiv.org/pdf/2203.02053.pdf)
 10) [Attacks on Multimodal CL training](https://openreview.net/pdf?id=iC4UHbQ01Mp)
+11) [Best of Both Worlds: Multimodal Contrastive Learning with Tabular and Imaging Data](https://arxiv.org/pdf/2303.14080.pdf)
+
 
 **Loss tweaks to conventional contrastive loss**
 
 1) [Debiased CL: Avoiding false negative arising from similar class](https://proceedings.neurips.cc/paper_files/paper/2020/file/63c3ddcc7b23daa1e42dc41f9a44a873-Paper.pdf)
 2) [Decoupled CL: controlling the hardness of discriminatory task](https://arxiv.org/pdf/2110.06848.pdf)
 3) [ExpCLR: using the additional features instead of augmentation](https://arxiv.org/pdf/2206.11517.pdf)
+4) [Contrastive Tuning: A Little Help to Make Masked Autoencoders Forget](https://ojs.aaai.org/index.php/AAAI/article/view/28078)
 
 **Non-negative example based CL**
 
